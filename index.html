@@ -175,12 +175,21 @@
 
     <main>
       <section id="hero" aria-label="Hero" class="relative flex min-h-[60vh] min-h-[400px] items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+          <img src="/images/hero-bg.svg" alt="" class="h-full w-full object-cover" fetchpriority="high" />
+          <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
+        </div>
+
+        <div class="absolute top-20 left-10 h-16 w-16 animate-float rounded-full bg-secondary/30 blur-sm"></div>
+        <div class="absolute bottom-20 right-10 h-24 w-24 animate-float rounded-full bg-accent/20 blur-sm" style="animation-delay: 1s"></div>
+        <div class="absolute top-1/3 right-1/4 h-8 w-8 animate-float rounded-full bg-secondary/40 blur-none" style="animation-delay: 2s"></div>
+
         <div class="container-section relative z-10 text-center">
-          <h1 class="text-balance text-4xl font-bold text-dark md:text-6xl">
+          <h1 class="text-balance text-4xl font-bold text-white md:text-6xl">
             CBB CERIYA<br />
-            <span class="text-primary">Sekolah TK Terbaik</span> di Kabupaten Tegal
+            <span class="text-secondary">Sekolah TK Terbaik</span> di Kabupaten Tegal
           </h1>
-          <p class="mx-auto mt-4 max-w-2xl text-lg text-dark/70 md:text-xl">
+          <p class="mx-auto mt-4 max-w-2xl text-lg text-white/80 md:text-xl">
             Pendidikan holistik untuk anak usia dini dengan metode interaktif,<br class="hidden sm:block" />
             guru profesional, dan lingkungan belajar yang aman &amp; nyaman.
           </p>
@@ -188,7 +197,7 @@
             <a href="#contact" class="inline-block rounded-xl bg-primary px-8 py-3 text-base font-semibold text-white shadow-md transition-transform hover:scale-105">
               Daftar Sekarang
             </a>
-            <a href="#program" class="inline-block rounded-xl border-2 border-primary px-8 py-3 text-base font-semibold text-primary transition-colors hover:bg-primary hover:text-white">
+            <a href="#program" class="inline-block rounded-xl border-2 border-white px-8 py-3 text-base font-semibold text-white transition-colors hover:bg-white hover:text-dark">
               Lihat Program
             </a>
           </div>
