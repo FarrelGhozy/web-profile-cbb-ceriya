@@ -1,7 +1,7 @@
 # CBB CERIYA — Landing Page Blueprint
 
 > **Status:** Draft / Planning  
-> **Target:** Static landing page — TK Sekolah CBB CERIYA, Ponorogo  
+> **Target:** Static landing page — TK Sekolah CBB CERIYA, Kabupaten Tegal  
 > **Stack:** HTML5 + Tailwind CSS v3 + Vanilla JS + Vite  
 > **Deployment:** GitHub Pages → Vercel/Netlify  
 
@@ -265,7 +265,7 @@ Content max-width:   max-w-6xl (1152px)
 │       ░░░░░░░░░░░░░░░░░░░░░░░          │
 │    ░░░░  CBB CERIYA         ░░░░░      │
 │   ░░░░  Sekolah TK Terbaik  ░░░░░░     │
-│   ░░░░  di Ponorogo         ░░░░░░     │
+│   ░░░░  di Kabupaten Tegal         ░░░░░░     │
 │    ░░░░                     ░░░░░      │
 │     ░░░░  [Daftar] [Info]  ░░░░       │
 │       ░░░░░░░░░░░░░░░░░░░░░           │
@@ -413,7 +413,7 @@ Content max-width:   max-w-6xl (1152px)
 │  ─────────────────────────────────────       │
 │                                              │
 │  ┌──────────────┐  ┌──────────────────┐      │
-│  │ Nama: [   ]  │  │ 📍 Jl. Contoh    │      │
+│  │ Nama: [   ]  │  │ 📍 Jalan Babakan, Bojong    │      │
 │  │ Email: [   ] │  │ 📞 0812-3456-7890│      │
 │  │ Pesan: [   ] │  │ ✉️ info@...      │      │
 │  │              │  │                  │      │
@@ -445,7 +445,7 @@ Content max-width:   max-w-6xl (1152px)
 │  Quick Links:  Kontak:                       │
 │  • Home       • 📞 0812-3456-7890            │
 │  • About      • ✉️ info@cbbceriya.com        │
-│  • Program    • 📍 Jl. Contoh, Ponorogo      │
+│  • Program    • 📍 Jalan Babakan, Bojong, Kabupaten Tegal      │
 │  • Gallery                                    │
 │  • Contact                                    │
 │                                              │
@@ -485,13 +485,13 @@ Content max-width:   max-w-6xl (1152px)
 
 | Keyword | Type | Placement |
 |---------|------|-----------|
-| "Sekolah TK Ponorogo" | Primary | H1, meta description, intro |
-| "TK terbaik di Ponorogo" | Primary | H2, about section |
-| "PAUD Ponorogo" | Secondary | Program section |
-| "Pendidikan anak usia dini Ponorogo" | Secondary | About paragraph |
-| "TK CBB CERIYA" | Brand | Throughout |
-| "Taman Kanak-kanak Ponorogo" | Long-tail | FAQ or content |
-| "Pendaftaran TK Ponorogo" | Action | CTA, contact |
+| "TK CBB CERIYA Tegal" | Brand | Throughout |
+| "TK terbaik di Kabupaten Tegal" | Primary | H1, meta description, intro |
+| "Sekolah TK Bojong Tegal" | Primary | H2, about section |
+| "PAUD Bojong Tegal" | Secondary | Program section |
+| "Pendidikan anak usia dini Tegal" | Secondary | About paragraph |
+| "TK Swasta Tegal" | Long-tail | FAQ or content |
+| "Pendaftaran TK Tegal" | Action | CTA, contact |
 
 ### 6.2 Content per Section
 
@@ -527,18 +527,18 @@ Content max-width:   max-w-6xl (1152px)
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Primary Meta -->
-<title>CBB CERIYA | Sekolah TK Terbaik di Ponorogo — Pendidikan Anak Usia Dini</title>
-<meta name="description" content="CBB CERIYA adalah sekolah TK terbaik di Ponorogo dengan metode pembelajaran interaktif, guru profesional, dan fasilitas modern. Daftarkan anak Anda sekarang!">
-<meta name="keywords" content="sekolah TK Ponorogo, TK terbaik Ponorogo, PAUD Ponorogo, pendidikan anak usia dini, TK CBB CERIYA, playgroup Ponorogo">
+<title>CBB CERIYA | Sekolah TK Terbaik di Kabupaten Tegal — Pendidikan Anak Usia Dini</title>
+<meta name="description" content="CBB CERIYA adalah sekolah TK terbaik di Kabupaten Tegal dengan metode pembelajaran interaktif, guru profesional, dan fasilitas modern. Daftarkan anak Anda sekarang!">
+<meta name="keywords" content="sekolah TK Tegal, TK terbaik Kabupaten Tegal, PAUD Bojong Tegal, pendidikan anak usia dini Tegal, TK CBB CERIYA, playgroup Tegal">
 <meta name="author" content="CBB CERIYA">
 <meta name="robots" content="index, follow">
 <meta name="language" content="id">
 <meta name="geo.region" content="ID-JI">
-<meta name="geo.placename" content="Ponorogo">
+<meta name="geo.placename" content="Kabupaten Tegal">
 
 <!-- Open Graph -->
-<meta property="og:title" content="CBB CERIYA | Sekolah TK Terbaik di Ponorogo">
-<meta property="og:description" content="Pendidikan berkualitas untuk anak usia dini dengan metode pembelajaran interaktif di Ponorogo.">
+<meta property="og:title" content="CBB CERIYA | Sekolah TK Terbaik di Kabupaten Tegal">
+<meta property="og:description" content="Pendidikan berkualitas untuk anak usia dini dengan metode pembelajaran interaktif di Kabupaten Tegal.">
 <meta property="og:image" content="https://cbbceriya.com/images/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -549,7 +549,7 @@ Content max-width:   max-w-6xl (1152px)
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="CBB CERIYA | Sekolah TK Terbaik di Ponorogo">
+<meta name="twitter:title" content="CBB CERIYA | Sekolah TK Terbaik di Kabupaten Tegal">
 <meta name="twitter:description" content="Pendidikan berkualitas untuk anak usia dini dengan metode pembelajaran interaktif.">
 <meta name="twitter:image" content="https://cbbceriya.com/images/og-image.jpg">
 
@@ -645,8 +645,8 @@ body
 ### 7.3 Heading Hierarchy
 
 ```
-h1: CBB CERIYA | Sekolah TK Terbaik di Ponorogo — Pendidikan Anak Usia Dini Berkualitas
-├── h2: Tentang CBB CERIYA — Sekolah TK Terbaik di Ponorogo
+h1: CBB CERIYA | Sekolah TK Terbaik di Kabupaten Tegal — Pendidikan Anak Usia Dini Berkualitas
+├── h2: Tentang CBB CERIYA — Sekolah TK Terbaik di Kabupaten Tegal
 │   ├── h3: Metode Pembelajaran Interaktif
 │   ├── h3: Guru Profesional & Berpengalaman
 │   └── h3: Lingkungan Belajar yang Aman & Nyaman
@@ -655,7 +655,7 @@ h1: CBB CERIYA | Sekolah TK Terbaik di Ponorogo — Pendidikan Anak Usia Dini Be
 │   ├── h3: TK B — Kesiapan Sekolah Dasar (Usia 5-6 Tahun)
 │   ├── h3: Playgroup — Belajar Sambil Bermain (Usia 2-4 Tahun)
 │   └── h3: Daycare — Perawatan & Pendidikan Terpadu (Usia 2-6 Tahun)
-├── h2: Fasilitas Modern TK CBB CERIYA Ponorogo
+├── h2: Fasilitas Modern TK CBB CERIYA Kabupaten Tegal
 ├── h2: Testimonial Orang Tua Murid TK CBB CERIYA
 └── h2: Hubungi & Daftarkan Anak Anda ke CBB CERIYA
 ```
@@ -670,21 +670,21 @@ Three structured data blocks in `<head>`:
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
   "name": "CBB CERIYA",
-  "alternateName": ["TK CBB CERIYA", "CBB CERIYA Ponorogo"],
+  "alternateName": ["TK CBB CERIYA", "CBB CERIYA Kabupaten Tegal"],
   "url": "https://cbbceriya.com",
   "logo": "https://cbbceriya.com/images/logo.svg",
-  "description": "Sekolah TK terbaik di Ponorogo dengan program pembelajaran interaktif, guru profesional, dan fasilitas modern untuk pendidikan anak usia dini.",
+  "description": "Sekolah TK terbaik di Kabupaten Tegal dengan program pembelajaran interaktif, guru profesional, dan fasilitas modern untuk pendidikan anak usia dini.",
   "foundingDate": "2020",
   "areaServed": {
     "@type": "City",
-    "name": "Ponorogo"
+    "name": "Kabupaten Tegal"
   },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Jl. Contoh No. 123",
-    "addressLocality": "Ponorogo",
+    "streetAddress": "Jalan Babakan, Kecamatan Bojong",
+    "addressLocality": "Kabupaten Tegal",
     "addressRegion": "Jawa Timur",
-    "postalCode": "63400",
+    "postalCode": "52465",
     "addressCountry": "ID"
   },
   "telephone": "+6281234567890",
@@ -708,13 +708,13 @@ Three structured data blocks in `<head>`:
   "@type": "LocalBusiness",
   "name": "CBB CERIYA",
   "image": "https://cbbceriya.com/images/hero-bg.webp",
-  "description": "Sekolah TK berkualitas dengan program pembelajaran terpadu untuk anak usia dini di Ponorogo.",
+  "description": "Sekolah TK berkualitas dengan program pembelajaran terpadu untuk anak usia dini di Kabupaten Tegal.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Jl. Contoh No. 123",
-    "addressLocality": "Ponorogo",
+    "streetAddress": "Jalan Babakan, Kecamatan Bojong",
+    "addressLocality": "Kabupaten Tegal",
     "addressRegion": "Jawa Timur",
-    "postalCode": "63400",
+    "postalCode": "52465",
     "addressCountry": "ID"
   },
   "telephone": "+6281234567890",
@@ -797,12 +797,12 @@ Sitemap: https://cbbceriya.com/sitemap.xml
 
 | Image | Alt Text | Filename Convention |
 |-------|----------|-------------------|
-| Hero | "Gedung Sekolah TK CBB CERIYA Ponorogo — tampak depan dengan halaman bermain" | hero-bg |
+| Hero | "Gedung Sekolah TK CBB CERIYA Kabupaten Tegal — tampak depan dengan halaman bermain" | hero-bg |
 | Kelas | "Ruang kelas interaktif TK CBB CERIYA dengan whiteboard digital dan mainan edukatif" | facility-classroom |
 | Lapangan | "Lapangan bermain aman TK CBB CERIYA dengan ayunan dan perosotan" | facility-playground |
 | Perpus | "Perpustakaan digital TK CBB CERIYA dengan buku cerita bergambar" | facility-library |
 | Musik | "Ruang musik TK CBB CERIYA dengan alat musik anak" | facility-music |
-| Logo | "Logo CBB CERIYA — Sekolah TK Terbaik Ponorogo" | logo |
+| Logo | "Logo CBB CERIYA — Sekolah TK Terbaik Kabupaten Tegal" | logo |
 
 ---
 
@@ -1303,7 +1303,7 @@ Berikut adalah issues yang akan dibuat di GitHub, dipecah secara granular:
 ### 16.2 Google Maps Embed
 ```html
 <iframe 
-  src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=CBB+CERIYA+Ponorogo"
+  src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=CBB+CERIYA+Bojong+Kabupaten+Tegal"
   width="100%"
   height="300"
   style="border:0;"
