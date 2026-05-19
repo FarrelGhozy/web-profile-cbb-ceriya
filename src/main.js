@@ -248,14 +248,29 @@ document.addEventListener('DOMContentLoaded', () => {
   renderTestimonials()
   startAutoplay()
 
+  const toast = document.createElement('div')
+  toast.className = 'fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-xl bg-green-600 px-6 py-3 text-white shadow-lg opacity-0 transition-opacity duration-300 pointer-events-none'
+  toast.textContent = 'Pesan berhasil dikirim! Kami akan menghubungi Anda segera.'
+  document.body.appendChild(toast)
+
+  function showToast() {
+    toast.classList.remove('opacity-0', 'pointer-events-none')
+    setTimeout(() => {
+      toast.classList.add('opacity-0', 'pointer-events-none')
+    }, 4000)
+  }
+
   const contactForm = document.getElementById('contact-form')
-  contactForm?.addEventListener('submit', e => {
+  contactForm?.addEventListener('submit', async e => {
+    e.preventDefault()
     const name = document.getElementById('name')
     const email = document.getElementById('email')
+    const phone = document.getElementById('phone')
     const message = document.getElementById('message')
     let valid = true
 
     document.querySelectorAll('.form-error').forEach(el => el.remove())
+    document.querySelectorAll('.border-red-400').forEach(el => el.classList.remove('border-red-400'))
 
     function showError(input, msg) {
       valid = false
@@ -266,32 +281,39 @@ document.addEventListener('DOMContentLoaded', () => {
       input.classList.add('border-red-400')
     }
 
-    function clearError(input) {
-      input.classList.remove('border-red-400')
-    }
-
-    if (!name?.value.trim()) {
-      showError(name, 'Nama lengkap harus diisi')
-    } else {
-      clearError(name)
-    }
-
+    if (!name?.value.trim()) showError(name, 'Nama lengkap harus diisi')
     if (!email?.value.trim()) {
       showError(email, 'Email harus diisi')
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
       showError(email, 'Format email tidak valid')
-    } else {
-      clearError(email)
     }
+    if (!message?.value.trim()) showError(message, 'Pesan harus diisi')
 
-    if (!message?.value.trim()) {
-      showError(message, 'Pesan harus diisi')
-    } else {
-      clearError(message)
-    }
+    if (!valid) return
 
-    if (!valid) {
-      e.preventDefault()
+    const submitBtn = contactForm.querySelector('button[type="submit"]')
+    const originalText = submitBtn.textContent
+    submitBtn.textContent = 'Mengirim...'
+    submitBtn.disabled = true
+
+    try {
+      const formData = new FormData(contactForm)
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      })
+      if (res.ok) {
+        contactForm.reset()
+        showToast()
+      } else {
+        alert('Gagal mengirim pesan. Silakan coba lagi.')
+      }
+    } catch {
+      alert('Gagal mengirim pesan. Periksa koneksi internet Anda.')
+    } finally {
+      submitBtn.textContent = originalText
+      submitBtn.disabled = false
     }
   })
 })
