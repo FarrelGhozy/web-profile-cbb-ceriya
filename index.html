@@ -347,17 +347,26 @@
         <div class="container-section">
           <h2 class="section-title">Testimonial Orang Tua</h2>
           <p class="section-subtitle">Apa kata mereka tentang pengalaman belajar di CBB CERIYA.</p>
-          <div id="testimonial-carousel" class="mx-auto max-w-2xl">
-            <blockquote class="rounded-2xl bg-white p-8 text-center shadow-lg">
-              <p class="text-lg italic leading-relaxed text-dark/80">"CBB CERIYA luar biasa! Anak saya jadi lebih percaya diri dan senang belajar setiap hari."</p>
-              <footer class="mt-6">
-                <img src="/images/avatar.svg" alt="Foto Ibu Siti" class="mx-auto h-16 w-16 rounded-full object-cover" />
-                <cite class="mt-3 block not-italic">
-                  <strong class="text-dark">Ibu Siti</strong>
-                  <span class="block text-sm text-dark/50">Orang Tua Ananda</span>
-                </cite>
-              </footer>
-            </blockquote>
+          <div id="testimonial-carousel" class="relative mx-auto max-w-2xl">
+            <div id="testimonial-track" class="overflow-hidden rounded-2xl">
+              <div id="testimonial-slides" class="flex transition-transform duration-500 ease-in-out"></div>
+            </div>
+
+            <div class="mt-6 flex items-center justify-center gap-3">
+              <button id="testimonial-prev" class="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md transition-colors hover:bg-neutral-50" aria-label="Sebelumnya">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+              </button>
+
+              <div id="testimonial-dots" class="flex gap-2"></div>
+
+              <button id="testimonial-next" class="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md transition-colors hover:bg-neutral-50" aria-label="Selanjutnya">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </section>

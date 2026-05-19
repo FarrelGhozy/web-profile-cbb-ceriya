@@ -1,4 +1,5 @@
 import './style.css'
+import { testimonials } from './utils/constants.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementById('header')
@@ -147,6 +148,105 @@ document.addEventListener('DOMContentLoaded', () => {
       closeLightbox()
     }
   })
+
+  const slidesContainer = document.getElementById('testimonial-slides')
+  const dotsContainer = document.getElementById('testimonial-dots')
+  const prevBtn = document.getElementById('testimonial-prev')
+  const nextBtn = document.getElementById('testimonial-next')
+  let currentSlide = 0
+  let autoplayInterval
+
+  function renderTestimonials() {
+    if (!slidesContainer || testimonials.length === 0) return
+
+    slidesContainer.innerHTML = testimonials
+      .map(
+        t => `
+      <div class="w-full flex-shrink-0 px-2">
+        <blockquote class="rounded-2xl bg-white p-8 text-center shadow-lg">
+          <p class="text-lg italic leading-relaxed text-dark/80">"${t.quote}"</p>
+          <footer class="mt-6">
+            <img src="${t.avatar}" alt="Foto ${t.name}" class="mx-auto h-16 w-16 rounded-full object-cover" />
+            <cite class="mt-3 block not-italic">
+              <strong class="text-dark">${t.name}</strong>
+              <span class="block text-sm text-dark/50">${t.role}</span>
+            </cite>
+          </footer>
+        </blockquote>
+      </div>`
+      )
+      .join('')
+
+    dotsContainer.innerHTML = testimonials
+      .map(
+        (_, i) =>
+          `<button class="h-2.5 w-2.5 rounded-full transition-all duration-300 ${
+            i === 0 ? 'bg-primary w-6' : 'bg-neutral-100'
+          }" data-slide="${i}" aria-label="Testimonial ke-${i + 1}"></button>`
+      )
+      .join('')
+
+    updateSlide(0)
+  }
+
+  function updateSlide(index) {
+    if (!slidesContainer) return
+    currentSlide = index
+    slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`
+
+    document.querySelectorAll('#testimonial-dots button').forEach((dot, i) => {
+      dot.className = `h-2.5 rounded-full transition-all duration-300 ${
+        i === currentSlide ? 'bg-primary w-6' : 'bg-neutral-100 w-2.5'
+      }`
+    })
+  }
+
+  function nextSlide() {
+    const total = testimonials.length
+    updateSlide((currentSlide + 1) % total)
+  }
+
+  function prevSlide() {
+    const total = testimonials.length
+    updateSlide((currentSlide - 1 + total) % total)
+  }
+
+  function startAutoplay() {
+    stopAutoplay()
+    autoplayInterval = setInterval(nextSlide, 5000)
+  }
+
+  function stopAutoplay() {
+    if (autoplayInterval) {
+      clearInterval(autoplayInterval)
+      autoplayInterval = null
+    }
+  }
+
+  prevBtn?.addEventListener('click', () => {
+    prevSlide()
+    startAutoplay()
+  })
+
+  nextBtn?.addEventListener('click', () => {
+    nextSlide()
+    startAutoplay()
+  })
+
+  dotsContainer?.addEventListener('click', e => {
+    const dot = e.target.closest('button')
+    if (dot && dot.dataset.slide !== undefined) {
+      updateSlide(Number(dot.dataset.slide))
+      startAutoplay()
+    }
+  })
+
+  const carouselEl = document.getElementById('testimonial-carousel')
+  carouselEl?.addEventListener('mouseenter', stopAutoplay)
+  carouselEl?.addEventListener('mouseleave', startAutoplay)
+
+  renderTestimonials()
+  startAutoplay()
 
   const contactForm = document.getElementById('contact-form')
   contactForm?.addEventListener('submit', e => {
