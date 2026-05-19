@@ -55,6 +55,22 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleScroll, { passive: true })
   handleScroll()
 
+  const animElements = document.querySelectorAll('[data-animate]')
+  if (animElements.length > 0) {
+    const animObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-visible')
+            animObserver.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+    )
+    animElements.forEach(el => animObserver.observe(el))
+  }
+
   const sections = document.querySelectorAll('section[id]')
   if (sections.length > 0) {
     const sectionObserver = new IntersectionObserver(
