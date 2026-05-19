@@ -1,0 +1,6 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="50" fill="#E9ECEF"/>
+  <circle cx="50" cy="38" r="18" fill="#CED4DA"/>
+  <ellipse cx="50" cy="75" rx="30" ry="20" fill="#CED4DA"/>
+  <text x="50" y="95" font-family="Arial, sans-serif" font-size="7" fill="#6C757D" text-anchor="middle">✋ Foto</text>
+</svg>

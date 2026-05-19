@@ -1,0 +1,20 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#F0F4F8" rx="12"/>
+  <defs>
+    <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DC143C" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#FFD700" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="400" height="300" fill="url(#g4)" rx="12"/>
+  <g transform="translate(130, 70)">
+    <circle cx="70" cy="70" r="60" fill="none" stroke="#DC143C" stroke-width="3" opacity="0.3"/>
+    <circle cx="70" cy="70" r="45" fill="none" stroke="#DC143C" stroke-width="3"/>
+    <circle cx="70" cy="70" r="30" fill="none" stroke="#DC143C" stroke-width="3"/>
+    <circle cx="70" cy="70" r="15" fill="none" stroke="#DC143C" stroke-width="3"/>
+    <line x1="70" y1="10" x2="70" y2="130" stroke="#DC143C" stroke-width="2" opacity="0.5"/>
+    <line x1="10" y1="70" x2="130" y2="70" stroke="#DC143C" stroke-width="2" opacity="0.5"/>
+  </g>
+  <text x="200" y="240" font-family="Arial, sans-serif" font-size="14" fill="#6C757D" text-anchor="middle" font-weight="bold">Ruang Musik</text>
+  <text x="200" y="265" font-family="Arial, sans-serif" font-size="11" fill="#ADB5BD" text-anchor="middle">✋ Ganti dengan foto asli</text>
+</svg>
