@@ -111,6 +111,43 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   })
 
+  const lightbox = document.getElementById('lightbox')
+  const lightboxImg = document.getElementById('lightbox-img')
+  const lightboxClose = document.getElementById('lightbox-close')
+  let currentLightboxIndex = -1
+  const galleryImages = document.querySelectorAll('.gallery-item')
+
+  function openLightbox(index) {
+    const img = galleryImages[index]?.querySelector('img')
+    if (!img) return
+    currentLightboxIndex = index
+    lightboxImg.src = img.src
+    lightboxImg.alt = img.alt
+    lightbox.classList.remove('opacity-0', 'pointer-events-none')
+    document.body.style.overflow = 'hidden'
+  }
+
+  function closeLightbox() {
+    lightbox.classList.add('opacity-0', 'pointer-events-none')
+    document.body.style.overflow = ''
+    currentLightboxIndex = -1
+  }
+
+  galleryImages.forEach((item, index) => {
+    item.addEventListener('click', () => openLightbox(index))
+  })
+
+  lightboxClose?.addEventListener('click', closeLightbox)
+  lightbox?.addEventListener('click', e => {
+    if (e.target === lightbox) closeLightbox()
+  })
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && lightbox && !lightbox.classList.contains('opacity-0')) {
+      closeLightbox()
+    }
+  })
+
   const contactForm = document.getElementById('contact-form')
   contactForm?.addEventListener('submit', e => {
     const name = document.getElementById('name')
