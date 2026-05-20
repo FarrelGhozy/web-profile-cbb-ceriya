@@ -56,6 +56,14 @@
 .stagger > *:nth-child(3) { transition-delay: 0.2s; }
 .stagger > *:nth-child(4) { transition-delay: 0.3s; }
 
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   [data-animate] {
     opacity: 1;
