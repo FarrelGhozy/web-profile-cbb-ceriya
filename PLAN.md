@@ -691,7 +691,7 @@ Three structured data blocks in `<head>`:
   "email": "info@cbbceriya.com",
   "sameAs": [
     "https://facebook.com/cbbceriya",
-    "https://instagram.com/cbbceriya",
+    "https://www.instagram.com/cbbceriya/",
     "https://youtube.com/@cbbceriya"
   ],
   "parentOrganization": {
