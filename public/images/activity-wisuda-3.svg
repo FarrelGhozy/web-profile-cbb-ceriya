@@ -1,0 +1,20 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#F0F4F8" rx="12"/>
+  <rect x="0" y="0" width="400" height="300" fill="url(#w3)" rx="12" opacity="0.5"/>
+  <defs>
+    <linearGradient id="w3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#DC143C" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(90, 50)">
+    <rect x="40" y="20" width="140" height="100" rx="8" fill="#E9ECEF" stroke="#DEE2E6" stroke-width="2"/>
+    <rect x="55" y="35" width="110" height="8" rx="2" fill="#CED4DA"/>
+    <rect x="55" y="50" width="80" height="8" rx="2" fill="#CED4DA"/>
+    <rect x="55" y="65" width="110" height="8" rx="2" fill="#CED4DA"/>
+    <rect x="55" y="80" width="60" height="8" rx="2" fill="#CED4DA"/>
+    <rect x="90" y="100" width="50" height="15" rx="4" fill="#DC143C" opacity="0.6"/>
+  </g>
+  <text x="200" y="240" font-family="Arial, sans-serif" font-size="14" fill="#6C757D" text-anchor="middle" font-weight="bold">Wisuda</text>
+  <text x="200" y="265" font-family="Arial, sans-serif" font-size="11" fill="#ADB5BD" text-anchor="middle">✋ Ganti dengan foto asli</text>
+</svg>

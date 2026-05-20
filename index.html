@@ -356,31 +356,11 @@
         <div class="container-section">
           <h2 class="section-title">Galeri Kegiatan</h2>
           <p class="section-subtitle">Momen-momen berharga dalam kegiatan belajar dan bermain di CBB CERIYA.</p>
-          <div class="stagger grid gap-6 sm:grid-cols-2" data-animate>
-            <figure class="gallery-item group relative cursor-pointer overflow-hidden rounded-2xl">
-              <img src="images/activity-1.svg" alt="Wisuda TK CBB CERIYA — momen kelulusan anak-anak" loading="lazy" class="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 via-black/10 to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <figcaption class="font-semibold text-white">Wisuda</figcaption>
-              </div>
-            </figure>
-            <figure class="gallery-item group relative cursor-pointer overflow-hidden rounded-2xl">
-              <img src="images/activity-2.svg" alt="Study tour CBB CERIYA — kunjungan belajar di luar sekolah" loading="lazy" class="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 via-black/10 to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <figcaption class="font-semibold text-white">Study Tour</figcaption>
-              </div>
-            </figure>
-            <figure class="gallery-item group relative cursor-pointer overflow-hidden rounded-2xl">
-              <img src="images/activity-3.svg" alt="Kegiatan belajar di ruang kelas CBB CERIYA" loading="lazy" class="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 via-black/10 to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <figcaption class="font-semibold text-white">Belajar di Ruang Kelas</figcaption>
-              </div>
-            </figure>
-            <figure class="gallery-item group relative cursor-pointer overflow-hidden rounded-2xl">
-              <img src="images/activity-4.svg" alt="Ngaji bersama CBB CERIYA — kegiatan mengaji dan doa" loading="lazy" class="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 via-black/10 to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <figcaption class="font-semibold text-white">Ngaji Bersama</figcaption>
-              </div>
-            </figure>
+          <div class="flex flex-col gap-6 lg:flex-row" data-animate>
+            <aside class="flex flex-row gap-3 overflow-x-auto lg:w-56 lg:flex-col lg:overflow-visible" id="gallery-tabs" role="tablist" aria-label="Kategori galeri"></aside>
+            <div class="min-h-0 flex-1" id="gallery-content">
+              <div class="grid grid-cols-2 gap-3 sm:gap-4" id="gallery-grid"></div>
+            </div>
           </div>
         </div>
       </section>

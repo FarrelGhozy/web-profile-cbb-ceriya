@@ -1,0 +1,21 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#F0F4F8" rx="12"/>
+  <defs>
+    <linearGradient id="n2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#28A745" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#FFD700" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="400" height="300" fill="url(#n2)" rx="12"/>
+  <g transform="translate(80, 50)">
+    <rect x="30" y="30" width="180" height="90" rx="6" fill="#E9ECEF" stroke="#DEE2E6" stroke-width="2"/>
+    <circle cx="80" cy="60" r="14" fill="#28A745" opacity="0.4"/>
+    <circle cx="120" cy="60" r="14" fill="#28A745" opacity="0.4"/>
+    <circle cx="160" cy="60" r="14" fill="#28A745" opacity="0.4"/>
+    <rect x="40" y="85" width="160" height="6" rx="3" fill="#CED4DA"/>
+    <rect x="40" y="98" width="120" height="6" rx="3" fill="#CED4DA"/>
+    <rect x="60" y="125" width="120" height="4" rx="2" fill="#ADB5BD"/>
+  </g>
+  <text x="200" y="240" font-family="Arial, sans-serif" font-size="14" fill="#6C757D" text-anchor="middle" font-weight="bold">Ngaji Bersama</text>
+  <text x="200" y="265" font-family="Arial, sans-serif" font-size="11" fill="#ADB5BD" text-anchor="middle">✋ Ganti dengan foto asli</text>
+</svg>

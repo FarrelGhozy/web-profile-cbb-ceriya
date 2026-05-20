@@ -115,38 +115,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightbox = document.getElementById('lightbox')
   const lightboxImg = document.getElementById('lightbox-img')
   const lightboxClose = document.getElementById('lightbox-close')
-  let currentLightboxIndex = -1
-  const galleryImages = document.querySelectorAll('.gallery-item')
-
-  function openLightbox(index) {
-    const img = galleryImages[index]?.querySelector('img')
-    if (!img) return
-    currentLightboxIndex = index
-    lightboxImg.src = img.src
-    lightboxImg.alt = img.alt
-    lightbox.classList.remove('opacity-0', 'pointer-events-none')
-    document.body.style.overflow = 'hidden'
-  }
 
   function closeLightbox() {
     lightbox.classList.add('opacity-0', 'pointer-events-none')
     document.body.style.overflow = ''
-    currentLightboxIndex = -1
   }
 
-  galleryImages.forEach((item, index) => {
-    item.addEventListener('click', () => openLightbox(index))
-  })
+  function openLightbox(src, alt) {
+    lightboxImg.src = src
+    lightboxImg.alt = alt
+    lightbox.classList.remove('opacity-0', 'pointer-events-none')
+    document.body.style.overflow = 'hidden'
+  }
 
   lightboxClose?.addEventListener('click', closeLightbox)
   lightbox?.addEventListener('click', e => {
     if (e.target === lightbox) closeLightbox()
   })
-
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && lightbox && !lightbox.classList.contains('opacity-0')) {
       closeLightbox()
     }
+  })
+
+  document.querySelectorAll('#fasilitas .gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const img = item.querySelector('img')
+      if (img) openLightbox(img.src, img.alt)
+    })
   })
 
   const slidesContainer = document.getElementById('testimonial-slides')
@@ -247,6 +243,82 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderTestimonials()
   startAutoplay()
+
+  const galleryData = [
+    {
+      id: 'wisuda',
+      name: 'Wisuda',
+      images: ['images/activity-1.svg', 'images/activity-wisuda-2.svg', 'images/activity-wisuda-3.svg']
+    },
+    {
+      id: 'studytour',
+      name: 'Study Tour',
+      images: ['images/activity-2.svg', 'images/activity-studytour-2.svg', 'images/activity-studytour-3.svg']
+    },
+    {
+      id: 'belajar',
+      name: 'Belajar di Kelas',
+      images: ['images/activity-3.svg', 'images/activity-belajar-2.svg', 'images/activity-belajar-3.svg']
+    },
+    {
+      id: 'ngaji',
+      name: 'Ngaji Bersama',
+      images: ['images/activity-4.svg', 'images/activity-ngaji-2.svg', 'images/activity-ngaji-3.svg']
+    }
+  ]
+  let activeCategory = galleryData[0].id
+
+  const tabsEl = document.getElementById('gallery-tabs')
+  const gridEl = document.getElementById('gallery-grid')
+
+  function renderGalleryTabs() {
+    tabsEl.innerHTML = galleryData.map(cat => `
+      <button role="tab" aria-selected="${cat.id === activeCategory}"
+        class="gallery-tab flex items-center gap-3 rounded-xl border p-3 text-left transition-all duration-200 whitespace-nowrap lg:flex-col lg:items-center lg:gap-2 lg:p-4 lg:text-center ${
+          cat.id === activeCategory
+            ? 'border-primary bg-primary/5 text-primary shadow-sm'
+            : 'border-neutral-100 bg-white text-dark/60 hover:border-neutral-200 hover:text-dark'
+        }"
+        data-category="${cat.id}">
+        <img src="${cat.images[0]}" alt="" class="h-14 w-20 flex-shrink-0 rounded-lg object-cover lg:h-20 lg:w-28" loading="lazy" />
+        <span class="text-sm font-semibold lg:text-xs lg:leading-tight lg:[writing-mode:vertical-lr]">${cat.name}</span>
+      </button>
+    `).join('')
+
+    tabsEl.addEventListener('click', e => {
+      const btn = e.target.closest('.gallery-tab')
+      if (btn) {
+        activeCategory = btn.dataset.category
+        renderGalleryTabs()
+        renderGalleryGrid()
+      }
+    })
+  }
+
+  function renderGalleryGrid() {
+    const cat = galleryData.find(c => c.id === activeCategory)
+    if (!cat) return
+
+    gridEl.innerHTML = cat.images.map((src, i) => `
+      <figure class="gallery-item group relative cursor-pointer overflow-hidden rounded-xl sm:rounded-2xl">
+        <img src="${src}" alt="${cat.name} — Foto ${i + 1}" loading="lazy"
+          class="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+        <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 via-black/10 to-transparent p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:p-4">
+          <figcaption class="text-sm font-semibold text-white sm:text-base">${cat.name}</figcaption>
+        </div>
+      </figure>
+    `).join('')
+
+    gridEl.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const img = item.querySelector('img')
+        if (img) openLightbox(img.src, img.alt)
+      })
+    })
+  }
+
+  renderGalleryTabs()
+  renderGalleryGrid()
 
   const toast = document.createElement('div')
   toast.className = 'fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-xl bg-green-600 px-6 py-3 text-white shadow-lg opacity-0 transition-opacity duration-300 pointer-events-none'
