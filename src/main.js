@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }"
         data-category="${cat.id}">
         <img src="${cat.images[0]}" alt="" class="h-14 w-20 flex-shrink-0 rounded-lg object-cover lg:h-20 lg:w-28" loading="lazy" />
-        <span class="text-sm font-semibold lg:text-xs lg:leading-tight lg:[writing-mode:vertical-lr]">${cat.name}</span>
+        <span class="text-sm font-semibold lg:text-xs lg:leading-tight">${cat.name}</span>
       </button>
     `).join('')
   }
