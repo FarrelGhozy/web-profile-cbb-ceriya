@@ -69,7 +69,7 @@ cbb-ceriya/
 │   ├── robots.txt
 │   ├── sitemap.xml
 │   ├── images/
-│   │   ├── logo.svg                         # Dummy logo (SVG)
+│   │   ├── logo.webp                         # Dummy logo (SVG)
 │   │   ├── logo-white.svg                   # Logo variant for dark bg
 │   │   ├── hero-bg.jpg                      # ✋ GANTI: foto gedung sekolah
 │   │   ├── hero-bg.webp                     # WebP version
@@ -557,7 +557,7 @@ Content max-width:   max-w-6xl (1152px)
 <link rel="canonical" href="https://cbbceriya.com">
 
 <!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="/images/logo.svg">
+<link rel="icon" type="image/svg+xml" href="/images/logo.webp">
 <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
 <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
 
@@ -672,7 +672,7 @@ Three structured data blocks in `<head>`:
   "name": "CBB CERIYA",
   "alternateName": ["TK CBB CERIYA", "CBB CERIYA Kabupaten Tegal"],
   "url": "https://cbbceriya.com",
-  "logo": "https://cbbceriya.com/images/logo.svg",
+  "logo": "https://cbbceriya.com/images/logo.webp",
   "description": "Sekolah TK terbaik di Kabupaten Tegal dengan program pembelajaran interaktif, guru profesional, dan fasilitas modern untuk pendidikan anak usia dini.",
   "foundingDate": "2020",
   "areaServed": {
@@ -959,7 +959,7 @@ animElements.forEach(el => animObserver.observe(el))
 
 | File | Type | Description | Size |
 |------|------|-------------|------|
-| `public/images/logo.svg` | SVG | Logo placeholder — teks "CBB CERIYA" dengan icon bintang | Vector |
+| `public/images/logo.webp` | SVG | Logo placeholder — teks "CBB CERIYA" dengan icon bintang | Vector |
 | `public/images/logo-white.svg` | SVG | Logo variant putih untuk footer | Vector |
 | `public/images/hero-bg.svg` | SVG | Dummy hero background — pattern abstrak gradasi | Vector |
 | `public/images/facility-1.svg` | SVG | Placeholder fasilitas — icon ruang kelas | Vector |

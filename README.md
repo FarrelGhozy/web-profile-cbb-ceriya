@@ -75,7 +75,7 @@ npm run preview
 | `facility-1.svg` | 1200×800px — ruang kelas |
 | `facility-2.svg` | 1200×800px — lapangan bermain |
 | `facility-3.svg` | 1200×800px — perpustakaan |
-| `logo.svg` | Vector — logo asli |
+| `logo.webp` | Vector — logo asli |
 | `avatar.svg` | 200×200px — foto orang tua |
 
 ## Yang Perlu Disiapkan Sebelum Deploy
