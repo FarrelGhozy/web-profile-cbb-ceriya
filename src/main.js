@@ -274,14 +274,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderGalleryTabs() {
     tabsEl.innerHTML = galleryData.map(cat => `
       <button role="tab" aria-selected="${cat.id === activeCategory}"
-        class="gallery-tab snap-start flex items-center gap-3 rounded-xl border-2 p-2 text-left transition-all duration-200 shrink-0 lg:flex-col lg:items-center lg:gap-3 lg:p-4 lg:text-center lg:w-full ${
+        class="gallery-tab flex items-center gap-3 rounded-xl border-2 p-2 text-left transition-all duration-200 shrink-0 lg:flex-col lg:items-center lg:gap-3 lg:p-4 lg:text-center lg:w-full ${
           cat.id === activeCategory
             ? 'border-primary bg-primary/5 text-primary shadow-md'
             : 'border-transparent bg-neutral-50 text-dark/60 hover:border-neutral-200 hover:text-dark hover:shadow-sm'
         }"
         data-category="${cat.id}">
         <img src="${cat.images[0]}" alt="" class="h-12 w-16 flex-shrink-0 rounded-lg object-cover lg:h-24 lg:w-full" loading="lazy" />
-        <span class="pr-2 text-xs font-semibold lg:w-full lg:pr-0 lg:text-sm">${cat.name}</span>
+        <span class="whitespace-pre text-xs font-semibold lg:w-full lg:text-sm">${cat.name}</span>
       </button>
     `).join('')
   }
