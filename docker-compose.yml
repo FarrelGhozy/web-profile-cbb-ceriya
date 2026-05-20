@@ -1,0 +1,7 @@
+services:
+  cbb-ceriya:
+    build: .
+    container_name: cbb-ceriya
+    ports:
+      - "8080:80"
+    restart: unless-stopped
