@@ -284,16 +284,16 @@ document.addEventListener('DOMContentLoaded', () => {
         <span class="text-sm font-semibold lg:text-xs lg:leading-tight lg:[writing-mode:vertical-lr]">${cat.name}</span>
       </button>
     `).join('')
-
-    tabsEl.addEventListener('click', e => {
-      const btn = e.target.closest('.gallery-tab')
-      if (btn) {
-        activeCategory = btn.dataset.category
-        renderGalleryTabs()
-        renderGalleryGrid()
-      }
-    })
   }
+
+  tabsEl.addEventListener('click', e => {
+    const btn = e.target.closest('.gallery-tab')
+    if (btn) {
+      activeCategory = btn.dataset.category
+      renderGalleryTabs()
+      renderGalleryGrid()
+    }
+  })
 
   function renderGalleryGrid() {
     const cat = galleryData.find(c => c.id === activeCategory)
