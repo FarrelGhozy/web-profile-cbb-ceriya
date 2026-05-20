@@ -413,7 +413,7 @@ Content max-width:   max-w-6xl (1152px)
 │  ─────────────────────────────────────       │
 │                                              │
 │  ┌──────────────┐  ┌──────────────────┐      │
-│  │ Nama: [   ]  │  │ 📍 Jalan Babakan, Bojong    │      │
+│  │ Nama: [   ]  │  │ 📍 R5X2+X9Q, Jl. Bojong, Tuwel, Bojong    │      │
 │  │ Email: [   ] │  │ 📞 0812-3456-7890│      │
 │  │ Pesan: [   ] │  │ ✉️ info@...      │      │
 │  │              │  │                  │      │
@@ -445,7 +445,7 @@ Content max-width:   max-w-6xl (1152px)
 │  Quick Links:  Kontak:                       │
 │  • Home       • 📞 0812-3456-7890            │
 │  • About      • ✉️ info@cbbceriya.com        │
-│  • Program    • 📍 Jalan Babakan, Bojong, Kabupaten Tegal      │
+│  • Program    • 📍 R5X2+X9Q, Jl. Bojong, Tuwel, Bojong, Kabupaten Tegal      │
 │  • Gallery                                    │
 │  • Contact                                    │
 │                                              │
@@ -681,7 +681,7 @@ Three structured data blocks in `<head>`:
   },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Jalan Babakan, Kecamatan Bojong",
+    "streetAddress": "R5X2+X9Q, Jl. Bojong, Babakan, Tuwel, Kec. Bojong",
     "addressLocality": "Kabupaten Tegal",
     "addressRegion": "Jawa Timur",
     "postalCode": "52465",
@@ -711,7 +711,7 @@ Three structured data blocks in `<head>`:
   "description": "Sekolah TK berkualitas dengan program pembelajaran terpadu untuk anak usia dini di Kabupaten Tegal.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Jalan Babakan, Kecamatan Bojong",
+    "streetAddress": "R5X2+X9Q, Jl. Bojong, Babakan, Tuwel, Kec. Bojong",
     "addressLocality": "Kabupaten Tegal",
     "addressRegion": "Jawa Timur",
     "postalCode": "52465",
