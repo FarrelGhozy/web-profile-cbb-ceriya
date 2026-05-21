@@ -1,7 +1,7 @@
 export const testimonials = [
   {
     id: 1,
-    quote: 'CBB CERIYA luar biasa! Anak saya jadi lebih percaya diri dan senang belajar setiap hari. Metode pembelajarannya sangat interaktif.',
+    quote: 'CBB CERIYA (Cinta Baca Belajar — Cerdas Iman & Kaya) luar biasa! Anak saya jadi lebih percaya diri, cinta baca, dan senang belajar setiap hari. Metode pembelajarannya sangat interaktif.',
     name: 'Ibu Siti',
     role: 'Orang Tua Ananda (TK A)',
     avatar: 'images/avatar.svg',
