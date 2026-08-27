@@ -51,7 +51,7 @@
       rel="stylesheet"
     />
 
-    <link rel="preload" as="image" href="images/hero-bg.svg" fetchpriority="high" />
+    <link rel="preload" as="image" href="images/photos/hero-sekolah.webp" type="image/webp" fetchpriority="high" />
 
     <script type="application/ld+json">
       {
@@ -90,7 +90,7 @@
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "CBB CERIYA",
-        "image": "https://cbbceriya.com/images/hero-bg.svg",
+        "image": "https://cbbceriya.com/images/photos/hero-sekolah.webp",
         "description": "CBB CERIYA (Cinta Baca Belajar — Cerdas Iman & Kaya) — LPK Islami berkualitas dengan program pembelajaran terpadu untuk anak di Kabupaten Tegal.",
         "address": {
           "@type": "PostalAddress",
@@ -164,408 +164,206 @@
     <script type="module" src="/src/main.js"></script>
   </head>
 
-  <body class="bg-neutral-50">
-    <header id="header" class="fixed left-0 right-0 top-0 z-50 transition-all duration-300">
-      <nav aria-label="Navigasi Utama" class="container-section flex items-center justify-between py-4">
-        <a href="#hero" class="flex items-center gap-2" aria-label="CBB CERIYA Beranda">
-          <img src="images/logo.webp" alt="" class="h-10 w-auto" />
-          <span class="text-lg font-bold text-dark">CBB CERIYA</span>
+  <body>
+    <a href="#main-content" class="skip-link">Lewati ke konten utama</a>
+
+    <header id="header" class="site-header">
+      <nav aria-label="Navigasi utama" class="container-section nav-shell">
+        <a href="#hero" class="brand-link" aria-label="CBB CERIYA, kembali ke beranda">
+          <img src="images/logo.webp" alt="" class="h-11 w-auto" />
+          <span><strong>CBB CERIYA</strong><small>Cinta Baca Belajar</small></span>
         </a>
-
-        <div class="flex items-center gap-4">
-          <button id="hamburger-btn" class="flex h-10 w-10 items-center justify-center rounded-lg md:hidden" aria-label="Buka menu navigasi" aria-expanded="false">
-            <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-
-        <ul id="nav-menu" class="hidden items-center gap-8 md:flex" role="list">
-          <li><a href="#hero" class="nav-link text-sm font-medium text-dark/70 transition-colors hover:text-primary">Beranda</a></li>
-          <li><a href="#about" class="nav-link text-sm font-medium text-dark/70 transition-colors hover:text-primary">Tentang</a></li>
-          <li><a href="#program" class="nav-link text-sm font-medium text-dark/70 transition-colors hover:text-primary">Program</a></li>
-          <li><a href="#gallery" class="nav-link text-sm font-medium text-dark/70 transition-colors hover:text-primary">Galeri</a></li>
-          <li><a href="#fasilitas" class="nav-link text-sm font-medium text-dark/70 transition-colors hover:text-primary">Fasilitas</a></li>
-          <li><a href="#testimonial" class="nav-link text-sm font-medium text-dark/70 transition-colors hover:text-primary">Testimoni</a></li>
-          <li><a href="#contact" class="nav-link text-sm font-medium text-dark/70 transition-colors hover:text-primary">Kontak</a></li>
-          <li>
-            <a href="#contact" class="inline-block rounded-xl bg-primary px-6 py-2 text-sm font-semibold text-white transition-transform hover:scale-105">
-              Daftar Sekarang
-            </a>
-          </li>
+        <ul class="hidden items-center gap-7 lg:flex" role="list">
+          <li><a href="#about" class="nav-link">Tentang</a></li>
+          <li><a href="#program" class="nav-link">Program</a></li>
+          <li><a href="#gallery" class="nav-link">Aktivitas</a></li>
+          <li><a href="#fasilitas" class="nav-link">Fasilitas</a></li>
+          <li><a href="#contact" class="nav-link">Kontak</a></li>
+          <li><a href="#contact" class="button button-primary button-sm">Konsultasi</a></li>
         </ul>
+        <button id="hamburger-btn" class="menu-toggle lg:hidden" type="button" aria-label="Buka menu navigasi" aria-controls="mobile-menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </nav>
     </header>
 
-    <div id="mobile-menu" class="invisible fixed inset-0 z-40 flex items-center justify-center bg-white opacity-0 transition-all duration-300 md:hidden">
-      <div class="flex flex-col items-center gap-8">
-        <a href="#hero" class="mobile-link text-2xl font-semibold text-dark/70 transition-colors hover:text-primary">Beranda</a>
-        <a href="#about" class="mobile-link text-2xl font-semibold text-dark/70 transition-colors hover:text-primary">Tentang</a>
-        <a href="#program" class="mobile-link text-2xl font-semibold text-dark/70 transition-colors hover:text-primary">Program</a>
-        <a href="#gallery" class="mobile-link text-2xl font-semibold text-dark/70 transition-colors hover:text-primary">Galeri</a>
-        <a href="#fasilitas" class="mobile-link text-2xl font-semibold text-dark/70 transition-colors hover:text-primary">Fasilitas</a>
-        <a href="#testimonial" class="mobile-link text-2xl font-semibold text-dark/70 transition-colors hover:text-primary">Testimoni</a>
-        <a href="#contact" class="mobile-link text-2xl font-semibold text-dark/70 transition-colors hover:text-primary">Kontak</a>
-        <a href="#contact" class="mt-4 inline-block rounded-xl bg-primary px-8 py-3 text-lg font-semibold text-white">Daftar Sekarang</a>
-      </div>
+    <div id="mobile-menu" class="mobile-menu lg:hidden" aria-hidden="true">
+      <button class="mobile-menu-backdrop" type="button" aria-label="Tutup menu"></button>
+      <nav class="mobile-menu-panel" aria-label="Navigasi ponsel">
+        <p class="eyebrow">Jelajahi CBB CERIYA</p>
+        <a href="#about" class="mobile-link">Tentang Kami <span>→</span></a>
+        <a href="#program" class="mobile-link">Program Belajar <span>→</span></a>
+        <a href="#gallery" class="mobile-link">Aktivitas Anak <span>→</span></a>
+        <a href="#fasilitas" class="mobile-link">Fasilitas <span>→</span></a>
+        <a href="#contact" class="mobile-link">Kontak <span>→</span></a>
+        <a href="#contact" class="button button-primary mt-5 w-full">Konsultasi Pendaftaran</a>
+      </nav>
     </div>
 
-    <main class="pt-16 md:pt-20">
-      <section id="hero" aria-label="Hero" class="relative flex min-h-screen items-center justify-center overflow-hidden">
-        <div class="absolute inset-0">
-          <img src="images/hero-bg.svg" alt="" class="h-full w-full object-cover" fetchpriority="high" />
-          <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
-        </div>
-
-        <div class="absolute top-20 left-10 h-16 w-16 animate-float rounded-full bg-secondary/30 blur-sm"></div>
-        <div class="absolute bottom-20 right-10 h-24 w-24 animate-float rounded-full bg-accent/20 blur-sm" style="animation-delay: 1s"></div>
-        <div class="absolute top-1/3 right-1/4 h-8 w-8 animate-float rounded-full bg-secondary/40 blur-none" style="animation-delay: 2s"></div>
-
-        <div class="container-section relative z-10 text-center">
-          <h1 class="text-balance text-4xl font-bold text-white md:text-6xl">
-            CBB CERIYA<br />
-            <span class="text-secondary">Cinta Baca Belajar</span> —
-            <span class="text-accent">Cerdas Iman &amp; Kaya</span>
-          </h1>
-          <p class="mx-auto mt-4 max-w-2xl text-lg text-white/80 md:text-xl">
-            LPK Pendidikan Karakter &amp; Keilmuan Islami — Metode Interaktif,<br class="hidden sm:block" />
-            Guru Profesional, Lingkungan Belajar Nyaman.
-          </p>
-          <div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <a href="#contact" class="inline-block rounded-xl bg-primary px-8 py-3 text-base font-semibold text-white shadow-md transition-transform hover:scale-105">
-              Daftar Sekarang
-            </a>
-            <a href="#program" class="inline-block rounded-xl border-2 border-white px-8 py-3 text-base font-semibold text-white transition-colors hover:bg-white hover:text-dark">
-              Lihat Program
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" aria-label="Tentang Kami" class="section-padding bg-white">
-        <div class="container-section">
-          <h2 class="section-title">Tentang CBB CERIYA</h2>
-          <p class="section-subtitle">
-            <strong class="text-primary">CBB</strong> (<em>Cinta Baca Belajar</em>) —
-            <strong class="text-primary">CERIYA</strong> (<em>Cerdas Iman &amp; Kaya</em>).
-            LPK Islami di Kabupaten Tegal yang berkomitmen membentuk akhlak karimah
-            dan mengembangkan keilmuan anak melalui metode belajar interaktif &amp; menyenangkan.
-          </p>
-          <div class="stagger grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <article class="feature-card group rounded-2xl bg-neutral-50 p-6 shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-animate>
-              <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold text-dark">Metode Belajar Aktif &amp; Islami</h3>
-              <p class="mt-2 leading-relaxed text-dark/60">Perpaduan metode multiple intelligence dengan nilai-nilai Islami untuk mengembangkan potensi akademik dan spiritual anak secara optimal.</p>
-            </article>
-            <article class="feature-card group rounded-2xl bg-neutral-50 p-6 shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-animate>
-              <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-secondary/20 text-secondary transition-colors group-hover:bg-secondary group-hover:text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold text-dark">Guru Profesional &amp; Berakhlak</h3>
-              <p class="mt-2 leading-relaxed text-dark/60">Tenaga pengajar tersertifikasi, berpengalaman, dan berakhlak karimah yang menjadi teladan bagi anak.</p>
-            </article>
-            <article class="feature-card group rounded-2xl bg-neutral-50 p-6 shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-animate>
-              <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold text-dark">Lingkungan Belajar Aman &amp; Nyaman</h3>
-              <p class="mt-2 leading-relaxed text-dark/60">Fasilitas lengkap dengan standar keamanan anak dan area bermain yang terawat.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="program" aria-label="Program Kami" class="section-padding">
-        <div class="container-section">
-          <h2 class="section-title">Program Pendidikan</h2>
-          <p class="section-subtitle">Program unggulan LPK CBB CERIYA untuk membentuk generasi cinta baca, cerdas, dan beriman.</p>
-          <div class="stagger grid gap-6 md:grid-cols-2" data-animate>
-            <article class="program-card group rounded-2xl border border-neutral-100 bg-white p-6 shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-              <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold text-dark">Fun English Islami</h3>
-              <p class="mt-1 text-sm font-medium text-accent">Usia 4—12 Tahun</p>
-              <p class="mt-2 leading-relaxed text-dark/60">Belajar Bahasa Inggris dengan metode fun &amp; interactive yang terintegrasi dengan nilai-nilai Islami dan hafalan kosakata sehari-hari.</p>
-              <a href="#contact" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors hover:text-accent">
-                Pelajari
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              </a>
-            </article>
-            <article class="program-card group rounded-2xl border border-neutral-100 bg-white p-6 shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-              <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342" />
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold text-dark">Calistung &amp; Ngaji</h3>
-              <p class="mt-1 text-sm font-medium text-accent">Usia 4—8 Tahun</p>
-              <p class="mt-2 leading-relaxed text-dark/60">Program baca, tulis, hitung dasar plus mengaji Iqro/Al-Qur&rsquo;an dan hafalan doa harian untuk membangun fondasi keilmuan yang kuat.</p>
-              <a href="#contact" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors hover:text-accent">
-                Pelajari
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              </a>
-            </article>
-            <article class="program-card group rounded-2xl border border-neutral-100 bg-white p-6 shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-              <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-secondary/20 text-secondary transition-colors group-hover:bg-secondary group-hover:text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold text-dark">Akhlak &amp; Adab Islami</h3>
-              <p class="mt-1 text-sm font-medium text-accent">Usia 4—12 Tahun</p>
-              <p class="mt-2 leading-relaxed text-dark/60">Pembentukan akhlak karimah, adab sehari-hari sesuai sunnah, dan penguatan karakter islami yang menjadi fondasi kepribadian anak.</p>
-              <a href="#contact" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors hover:text-accent">
-                Pelajari
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              </a>
-            </article>
-            <article class="program-card group rounded-2xl border border-neutral-100 bg-white p-6 shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-              <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold text-dark">Kreativitas &amp; Kaligrafi</h3>
-              <p class="mt-1 text-sm font-medium text-accent">Usia 4—12 Tahun</p>
-              <p class="mt-2 leading-relaxed text-dark/60">Menggambar, mewarnai, kerajinan tangan, dan seni kaligrafi Islami untuk mengembangkan kreativitas dan kecintaan pada seni Islam.</p>
-              <a href="#contact" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors hover:text-accent">
-                Pelajari
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              </a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="gallery" aria-label="Galeri Kegiatan" class="section-padding bg-white">
-        <div class="container-section">
-          <h2 class="section-title">Galeri Kegiatan</h2>
-          <p class="section-subtitle">Momen-momen berharga dalam kegiatan belajar dan bermain di LPK CBB CERIYA.</p>
-          <div class="flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-8" data-animate>
-            <div class="hide-scrollbar overflow-x-auto pb-1 lg:w-80 lg:shrink-0 lg:overflow-visible lg:pb-0">
-              <aside class="flex w-max flex-row gap-2 lg:w-full lg:flex-col lg:gap-4" id="gallery-tabs" role="tablist" aria-label="Kategori galeri"></aside>
+    <main id="main-content">
+      <section id="hero" class="hero-section" aria-labelledby="hero-title">
+        <div class="container-section hero-grid">
+          <div class="hero-copy" data-animate>
+            <p class="eyebrow"><span></span> LPK Islami untuk anak usia 4–12 tahun</p>
+            <h1 id="hero-title" class="hero-title">Tempat anak tumbuh <em>cerdas</em>, <strong>beriman</strong>, dan senang belajar.</h1>
+            <p class="hero-description">CBB CERIYA memadukan pembelajaran aktif, penguatan akhlak, dan suasana belajar yang menyenangkan untuk membantu setiap anak berkembang dengan percaya diri.</p>
+            <div class="hero-actions">
+              <a href="#contact" class="button button-primary">Konsultasi Pendaftaran <span aria-hidden="true">→</span></a>
+              <a href="#program" class="button button-secondary">Lihat Program</a>
             </div>
-            <div class="min-h-0 flex-1 lg:max-w-3xl" id="gallery-content">
-              <div class="grid grid-cols-2 gap-3 sm:gap-4" id="gallery-grid"></div>
+            <ul class="trust-list" aria-label="Keunggulan utama">
+              <li><span>✓</span> Belajar interaktif</li><li><span>✓</span> Nilai-nilai Islami</li><li><span>✓</span> Lingkungan nyaman</li>
+            </ul>
+          </div>
+          <div class="hero-visual" data-animate>
+            <div class="hero-image-wrap">
+              <div class="hero-learning-board">
+                <img class="hero-photo" src="images/photos/hero-sekolah.webp" alt="Suasana belajar anak di CBB CERIYA" fetchpriority="high" />
+                <div class="hero-photo-scrim" aria-hidden="true"></div>
+                <p>Hari ini kita belajar</p>
+                <h2>Baca, ngaji,<br />dan berkreasi.</h2>
+                <div class="learning-tiles" aria-hidden="true"><span>Aa</span><span>123</span><span>ابت</span><span>✎</span></div>
+              </div>
+              <div class="hero-image-overlay"></div>
+              <div class="hero-quote-card"><span class="hero-quote-icon">✦</span><div><strong>Cinta Baca Belajar</strong><p>Cerdas Iman &amp; Kaya</p></div></div>
             </div>
+            <div class="floating-note note-top"><strong>4</strong><span>Program terpadu</span></div>
+            <div class="floating-note note-bottom"><strong>4–12</strong><span>Usia belajar</span></div>
+          </div>
+        </div>
+        <div class="container-section">
+          <div class="hero-facts" aria-label="Informasi singkat CBB CERIYA">
+            <div><strong>4–12 tahun</strong><span>Rentang usia belajar</span></div>
+            <div><strong>4 program</strong><span>Akademik, karakter, dan kreativitas</span></div>
+            <div><strong>Bojong, Tegal</strong><span>Lokasi belajar</span></div>
           </div>
         </div>
       </section>
 
-      <section id="fasilitas" aria-label="Fasilitas" class="section-padding">
-        <div class="container-section">
-          <h2 class="section-title">Fasilitas Modern</h2>
-          <p class="section-subtitle">Lingkungan belajar yang dirancang untuk mendukung tumbuh kembang anak secara optimal.</p>
-          <div class="stagger grid gap-6 sm:grid-cols-2 lg:grid-cols-4" data-animate>
-            <figure class="gallery-item group relative cursor-pointer overflow-hidden rounded-2xl">
-              <img src="images/facility-1.svg" alt="Ruang kelas interaktif CBB CERIYA dengan whiteboard digital dan mainan edukatif" loading="lazy" class="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 via-black/10 to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <figcaption class="font-semibold text-white">Ruang Kelas Interaktif</figcaption>
-              </div>
-            </figure>
-            <figure class="gallery-item group relative cursor-pointer overflow-hidden rounded-2xl">
-              <img src="images/facility-2.svg" alt="Lapangan bermain aman CBB CERIYA dengan ayunan dan perosotan" loading="lazy" class="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 via-black/10 to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <figcaption class="font-semibold text-white">Lapangan Bermain</figcaption>
-              </div>
-            </figure>
-            <figure class="gallery-item group relative cursor-pointer overflow-hidden rounded-2xl">
-              <img src="images/facility-3.svg" alt="Perpustakaan digital CBB CERIYA dengan buku cerita bergambar" loading="lazy" class="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 via-black/10 to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <figcaption class="font-semibold text-white">Perpustakaan Digital</figcaption>
-              </div>
-            </figure>
-            <figure class="gallery-item group relative cursor-pointer overflow-hidden rounded-2xl">
-              <img src="images/facility-4.svg" alt="Sistem keamanan CCTV 24 jam CBB CERIYA untuk keamanan anak" loading="lazy" class="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 via-black/10 to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <figcaption class="font-semibold text-white">Keamanan CCTV 24 Jam</figcaption>
-              </div>
-            </figure>
+      <section id="about" class="section-padding bg-white" aria-labelledby="about-title">
+        <div class="container-section about-grid">
+          <div data-animate>
+            <p class="eyebrow">Tentang kami</p>
+            <h2 id="about-title" class="section-title section-title-left">Ilmu dan akhlak tumbuh bersama.</h2>
+            <p class="section-lead"><strong>CBB</strong> berarti <em>Cinta Baca Belajar</em>, sedangkan <strong>CERIYA</strong> berarti <em>Cerdas Iman &amp; Kaya</em>. Kami hadir sebagai ruang belajar Islami di Kabupaten Tegal yang menghargai proses dan potensi unik setiap anak.</p>
+            <a href="#program" class="text-link">Kenali program kami <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="value-list" data-animate>
+            <article class="value-card value-blue"><span class="value-number">01</span><div><h3>Belajar aktif dan menyenangkan</h3><p>Anak diajak mencoba, bertanya, dan memahami lewat kegiatan yang sesuai tahap usianya.</p></div></article>
+            <article class="value-card value-yellow"><span class="value-number">02</span><div><h3>Karakter Islami dalam keseharian</h3><p>Akhlak, adab, doa, dan kebiasaan baik menyatu dalam proses belajar sehari-hari.</p></div></article>
+            <article class="value-card value-red"><span class="value-number">03</span><div><h3>Lingkungan aman dan suportif</h3><p>Pendampingan guru dan fasilitas belajar membantu anak bertumbuh dengan nyaman.</p></div></article>
           </div>
         </div>
       </section>
 
-      <section id="testimonial" aria-label="Testimonial" class="section-padding">
+      <section id="program" class="section-padding section-soft" aria-labelledby="program-title">
         <div class="container-section">
-          <h2 class="section-title">Testimonial Orang Tua</h2>
-          <p class="section-subtitle">Apa kata mereka tentang pengalaman belajar di LPK CBB CERIYA.</p>
-          <div id="testimonial-carousel" class="relative mx-auto max-w-2xl">
-            <div id="testimonial-track" class="overflow-hidden rounded-2xl">
-              <div id="testimonial-slides" class="flex transition-transform duration-500 ease-in-out"></div>
-            </div>
-
-            <div class="mt-6 flex items-center justify-center gap-3">
-              <button id="testimonial-prev" class="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md transition-colors hover:bg-neutral-50" aria-label="Sebelumnya">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                </svg>
-              </button>
-
-              <div id="testimonial-dots" class="flex gap-2"></div>
-
-              <button id="testimonial-next" class="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md transition-colors hover:bg-neutral-50" aria-label="Selanjutnya">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                </svg>
-              </button>
-            </div>
+          <div class="section-heading" data-animate>
+            <div><p class="eyebrow">Program pendidikan</p><h2 id="program-title" class="section-title section-title-left">Pilih program sesuai kebutuhan anak.</h2></div>
+            <p class="section-lead">Empat program saling melengkapi untuk menguatkan kemampuan dasar, keimanan, bahasa, dan kreativitas.</p>
+          </div>
+          <div class="program-grid" data-animate>
+            <article class="program-card program-blue"><div class="program-card-top"><span class="program-icon">Aa</span><span class="age-badge">Usia 4–12 tahun</span></div><h3>Fun English Islami</h3><p>Bahasa Inggris melalui percakapan, permainan, dan kosakata harian yang terintegrasi dengan nilai Islami.</p><a href="#contact" class="program-link" data-program="Fun English Islami">Tanya program ini <span>→</span></a></article>
+            <article class="program-card program-red"><div class="program-card-top"><span class="program-icon">123</span><span class="age-badge">Usia 4–8 tahun</span></div><h3>Calistung &amp; Ngaji</h3><p>Fondasi baca, tulis, dan hitung dilengkapi belajar Iqro/Al-Qur’an serta hafalan doa harian.</p><a href="#contact" class="program-link" data-program="Calistung & Ngaji">Tanya program ini <span>→</span></a></article>
+            <article class="program-card program-yellow"><div class="program-card-top"><span class="program-icon">♡</span><span class="age-badge">Usia 4–12 tahun</span></div><h3>Akhlak &amp; Adab Islami</h3><p>Pembiasaan adab sehari-hari sesuai sunnah untuk membangun karakter baik sejak usia dini.</p><a href="#contact" class="program-link" data-program="Akhlak & Adab Islami">Tanya program ini <span>→</span></a></article>
+            <article class="program-card program-green"><div class="program-card-top"><span class="program-icon">✎</span><span class="age-badge">Usia 4–12 tahun</span></div><h3>Kreativitas &amp; Kaligrafi</h3><p>Menggambar, mewarnai, kerajinan tangan, dan kaligrafi untuk mengembangkan imajinasi anak.</p><a href="#contact" class="program-link" data-program="Kreativitas & Kaligrafi">Tanya program ini <span>→</span></a></article>
           </div>
         </div>
       </section>
 
-      <section id="contact" aria-label="Hubungi Kami" class="section-padding bg-white">
+      <section id="gallery" class="section-padding bg-white" aria-labelledby="gallery-title">
         <div class="container-section">
-          <h2 class="section-title">Hubungi Kami</h2>
-          <p class="section-subtitle">Silakan hubungi kami untuk informasi pendaftaran dan konsultasi program LPK CBB CERIYA.</p>
-          <div class="grid gap-8 lg:grid-cols-2">
-            <form id="contact-form" class="space-y-5" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-              <div>
-                <label for="name" class="mb-1 block text-sm font-medium text-dark">Nama Lengkap</label>
-                <input type="text" id="name" name="name" required placeholder="Nama lengkap Anda" class="w-full rounded-lg border border-neutral-100 px-4 py-3 text-dark outline-none transition-colors focus:border-primary" />
+          <div class="section-heading" data-animate>
+            <div><p class="eyebrow">Aktivitas anak</p><h2 id="gallery-title" class="section-title section-title-left">Belajar lewat pengalaman yang beragam.</h2></div>
+            <p class="section-lead">Lihat suasana kegiatan CBB CERIYA, dari proses belajar di kelas hingga momen kebersamaan.</p>
+          </div>
+          <div class="gallery-tabs-wrap hide-scrollbar" data-animate><div id="gallery-tabs" class="gallery-tabs" role="tablist" aria-label="Kategori galeri"></div></div>
+          <div id="gallery-panel" role="tabpanel" tabindex="0" aria-live="polite" data-animate><div id="gallery-grid" class="gallery-grid"></div></div>
+        </div>
+      </section>
+
+      <section id="fasilitas" class="section-padding section-soft" aria-labelledby="facility-title">
+        <div class="container-section">
+          <div class="section-heading" data-animate>
+            <div><p class="eyebrow">Fasilitas</p><h2 id="facility-title" class="section-title section-title-left">Ruang yang mendukung anak bereksplorasi.</h2></div>
+            <p class="section-lead">Setiap area dirancang untuk kegiatan belajar, bermain, membaca, dan tumbuh dengan rasa aman.</p>
+          </div>
+          <div class="facility-grid" data-animate>
+            <button type="button" class="facility-card gallery-trigger" data-src="images/photos/fasilitas-kelas.webp" data-alt="Ruang kelas interaktif CBB CERIYA"><img src="images/photos/fasilitas-kelas.webp" alt="" loading="lazy" /><span><strong>Ruang Kelas Interaktif</strong><small>Belajar dan berdiskusi dengan nyaman</small></span></button>
+            <button type="button" class="facility-card gallery-trigger" data-src="images/photos/fasilitas-bermain.webp" data-alt="Lapangan bermain CBB CERIYA"><img src="images/photos/fasilitas-bermain.webp" alt="" loading="lazy" /><span><strong>Lapangan Bermain</strong><small>Ruang gerak untuk aktivitas fisik anak</small></span></button>
+            <button type="button" class="facility-card gallery-trigger" data-src="images/photos/fasilitas-perpustakaan.webp" data-alt="Perpustakaan CBB CERIYA"><img src="images/photos/fasilitas-perpustakaan.webp" alt="" loading="lazy" /><span><strong>Perpustakaan</strong><small>Pilihan bacaan untuk menumbuhkan rasa ingin tahu</small></span></button>
+            <button type="button" class="facility-card gallery-trigger" data-src="images/photos/fasilitas-cctv.webp" data-alt="Sistem keamanan CCTV CBB CERIYA"><img src="images/photos/fasilitas-cctv.webp" alt="" loading="lazy" /><span><strong>Keamanan CCTV</strong><small>Pemantauan area untuk kenyamanan bersama</small></span></button>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonial" class="section-padding testimonial-section" aria-labelledby="testimonial-title">
+        <div class="container-section">
+          <div class="section-heading" data-animate>
+            <div><p class="eyebrow">Cerita orang tua</p><h2 id="testimonial-title" class="section-title section-title-left">Perkembangan anak yang mereka rasakan.</h2></div>
+            <p class="section-lead">Pengalaman keluarga menjadi bagian penting untuk terus meningkatkan kualitas pendampingan kami.</p>
+          </div>
+          <div id="testimonial-list" class="testimonial-list" data-animate></div>
+        </div>
+      </section>
+
+      <section id="faq" class="section-padding bg-white" aria-labelledby="faq-title">
+        <div class="container-section faq-grid">
+          <div data-animate><p class="eyebrow">Pertanyaan umum</p><h2 id="faq-title" class="section-title section-title-left">Informasi yang sering ditanyakan orang tua.</h2><p class="section-lead">Belum menemukan jawaban yang dicari? Tim kami siap membantu melalui WhatsApp.</p></div>
+          <div class="faq-list" data-animate>
+            <details class="faq-item"><summary>Berapa biaya program di CBB CERIYA?<span>+</span></summary><p>Biaya menyesuaikan program yang dipilih. Hubungi kami untuk mendapatkan informasi biaya dan jadwal terbaru.</p></details>
+            <details class="faq-item"><summary>Kapan jam operasionalnya?<span>+</span></summary><p>Kami melayani Senin sampai Jumat, pukul 07.00–15.00 WIB.</p></details>
+            <details class="faq-item"><summary>Di mana lokasi CBB CERIYA?<span>+</span></summary><p>Kami berada di Jl. Bojong, Babakan, Tuwel, Kecamatan Bojong, Kabupaten Tegal.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section" aria-labelledby="contact-title">
+        <div class="container-section">
+          <div class="contact-heading" data-animate><p class="eyebrow eyebrow-light">Langkah selanjutnya</p><h2 id="contact-title">Mari temukan program yang tepat untuk anak Anda.</h2><p>Ceritakan kebutuhan anak secara singkat. Pesan akan disiapkan dan dilanjutkan melalui WhatsApp.</p></div>
+          <div class="contact-grid">
+            <form id="contact-form" class="contact-form" data-animate>
+              <div class="field-grid">
+                <div class="field-group"><label for="name">Nama orang tua</label><input id="name" name="name" type="text" autocomplete="name" required placeholder="Nama lengkap" /></div>
+                <div class="field-group"><label for="phone">Nomor WhatsApp</label><input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="08xx xxxx xxxx" inputmode="tel" /></div>
               </div>
-              <div>
-                <label for="email" class="mb-1 block text-sm font-medium text-dark">Email</label>
-                <input type="email" id="email" name="email" required placeholder="email@contoh.com" class="w-full rounded-lg border border-neutral-100 px-4 py-3 text-dark outline-none transition-colors focus:border-primary" />
-              </div>
-              <div>
-                <label for="phone" class="mb-1 block text-sm font-medium text-dark">No. Telepon</label>
-                <input type="tel" id="phone" name="phone" placeholder="0812-3456-7890" class="w-full rounded-lg border border-neutral-100 px-4 py-3 text-dark outline-none transition-colors focus:border-primary" />
-              </div>
-              <div>
-                <label for="message" class="mb-1 block text-sm font-medium text-dark">Pesan</label>
-                <textarea id="message" name="message" rows="4" required placeholder="Tulis pesan Anda..." class="w-full rounded-lg border border-neutral-100 px-4 py-3 text-dark outline-none transition-colors focus:border-primary"></textarea>
-              </div>
-              <button type="submit" class="w-full rounded-xl bg-primary px-8 py-3 text-base font-semibold text-white transition-transform hover:scale-[1.02]">
-                Kirim Pesan
-              </button>
+              <div class="field-group"><label for="program-choice">Program yang diminati</label><select id="program-choice" name="program" required><option value="">Pilih program</option><option>Fun English Islami</option><option>Calistung &amp; Ngaji</option><option>Akhlak &amp; Adab Islami</option><option>Kreativitas &amp; Kaligrafi</option><option>Konsultasi umum</option></select></div>
+              <div class="field-group"><label for="message">Apa yang ingin ditanyakan?</label><textarea id="message" name="message" rows="4" required placeholder="Contoh: Saya ingin mengetahui jadwal kelas untuk anak usia 6 tahun."></textarea></div>
+              <button type="submit" class="button button-whatsapp w-full">Lanjutkan ke WhatsApp <span aria-hidden="true">↗</span></button>
+              <p class="form-note">WhatsApp akan terbuka dengan pesan yang sudah disiapkan. Anda tetap dapat memeriksanya sebelum mengirim.</p>
+              <p id="form-status" class="sr-only" aria-live="polite"></p>
             </form>
-
-            <aside class="space-y-6">
-              <address class="space-y-4 not-italic">
-                <div class="flex items-start gap-3">
-                  <span class="mt-1 text-primary">📍</span>
-                  <div>
-                    <p class="font-semibold text-dark">Alamat</p>
-                    <p class="text-dark/60">R5X2+X9Q, Jl. Bojong, Babakan, Tuwel, Kec. Bojong, Kabupaten Tegal, Jawa Tengah 52465</p>
-                  </div>
-                </div>
-                <div class="flex items-start gap-3">
-                  <span class="mt-1 text-primary">📞</span>
-                  <div>
-                    <p class="font-semibold text-dark">Telepon</p>
-                    <a href="tel:+6281234567890" class="text-dark/60 transition-colors hover:text-primary">0812-3456-7890</a>
-                  </div>
-                </div>
-                <div class="flex items-start gap-3">
-                  <span class="mt-1 text-primary">✉️</span>
-                  <div>
-                    <p class="font-semibold text-dark">Email</p>
-                    <a href="mailto:info@cbbceriya.com" class="text-dark/60 transition-colors hover:text-primary">info@cbbceriya.com</a>
-                  </div>
-                </div>
-              </address>
-
-              <div class="flex gap-4">
-                <a href="https://facebook.com/cbbceriya" target="_blank" rel="noopener noreferrer" aria-label="Facebook CBB CERIYA" class="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-100 text-dark/60 transition-colors hover:bg-primary hover:text-white">
-                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
-                </a>
-                <a href="https://www.instagram.com/cbbceriya/" target="_blank" rel="noopener noreferrer" aria-label="Instagram CBB CERIYA" class="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-100 text-dark/60 transition-colors hover:bg-primary hover:text-white">
-                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.165 5.5h1.335v1.555h-1.335V7.5zM12 8.5a3.5 3.5 0 110 7 3.5 3.5 0 010-7zm6.5 7.5c0 1.105-.895 2-2 2h-9c-1.105 0-2-.895-2-2V9c0-1.105.895-2 2-2h9c1.105 0 2 .895 2 2v7z"/></svg>
-                </a>
-                <a href="https://youtube.com/@cbbceriya" target="_blank" rel="noopener noreferrer" aria-label="YouTube CBB CERIYA" class="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-100 text-dark/60 transition-colors hover:bg-primary hover:text-white">
-                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                </a>
+            <aside class="contact-info" data-animate>
+              <div class="contact-info-card">
+                <h3>Hubungi dan kunjungi kami</h3>
+                <address>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=CBB+CERIYA+Bojong+Tegal" target="_blank" rel="noopener noreferrer"><span>Lokasi</span><strong>Jl. Bojong, Babakan, Tuwel, Kabupaten Tegal</strong></a>
+                  <a href="tel:+6281234567890"><span>Telepon</span><strong>0812-3456-7890</strong></a>
+                  <a href="mailto:info@cbbceriya.com"><span>Email</span><strong>info@cbbceriya.com</strong></a>
+                  <div><span>Jam layanan</span><strong>Senin–Jumat, 07.00–15.00 WIB</strong></div>
+                </address>
               </div>
-
-              <div class="overflow-hidden rounded-2xl">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.11!2d109.1461144!3d-7.1500382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f93e057f5d0e1%3A0x5d18139996893ef5!2sCBB%20CERIYA!5e0!3m2!1sid!2sid"
-                  width="100%"
-                  height="250"
-                  style="border: 0"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                  class="rounded-2xl"
-                ></iframe>
-              </div>
+              <div class="map-wrap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.11!2d109.1461144!3d-7.1500382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f93e057f5d0e1%3A0x5d18139996893ef5!2sCBB%20CERIYA!5e0!3m2!1sid!2sid" width="100%" height="250" style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Peta lokasi CBB CERIYA"></iframe></div>
             </aside>
           </div>
         </div>
       </section>
     </main>
 
-    <div id="lightbox" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 opacity-0 pointer-events-none transition-opacity duration-300">
-      <button id="lightbox-close" class="absolute top-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20" aria-label="Tutup">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-      <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-[90vw] rounded-2xl object-contain shadow-2xl" />
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Pratinjau gambar">
+      <button id="lightbox-close" class="lightbox-close" type="button" aria-label="Tutup pratinjau">×</button><img id="lightbox-img" src="" alt="" />
     </div>
 
-    <footer id="footer" class="bg-dark py-12 text-white/80">
-      <div class="container-section">
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" data-animate>
-          <div>
-            <img src="images/logo-white.webp" alt="Logo CBB CERIYA" class="mb-4 h-10 w-auto" />
-            <p class="text-sm leading-relaxed text-white/60">
-              <strong class="text-primary">CBB</strong> (<em>Cinta Baca Belajar</em>) — <strong class="text-primary">CERIYA</strong> (<em>Cerdas Iman &amp; Kaya</em>). LPK Islami yang berkomitmen membentuk akhlak karimah dan mengembangkan keilmuan anak di Kabupaten Tegal.
-            </p>
-          </div>
-          <div>
-            <h4 class="mb-4 text-sm font-semibold uppercase tracking-wider text-white">Quick Links</h4>
-            <nav aria-label="Footer Navigation">
-              <ul class="space-y-2 text-sm">
-                <li><a href="#hero" class="text-white/60 transition-colors hover:text-white">Beranda</a></li>
-                <li><a href="#about" class="text-white/60 transition-colors hover:text-white">Tentang</a></li>
-                <li><a href="#program" class="text-white/60 transition-colors hover:text-white">Program</a></li>
-                <li><a href="#gallery" class="text-white/60 transition-colors hover:text-white">Galeri</a></li>
-                <li><a href="#fasilitas" class="text-white/60 transition-colors hover:text-white">Fasilitas</a></li>
-                <li><a href="#testimonial" class="text-white/60 transition-colors hover:text-white">Testimoni</a></li>
-                <li><a href="#contact" class="text-white/60 transition-colors hover:text-white">Kontak</a></li>
-              </ul>
-            </nav>
-          </div>
-          <div>
-            <h4 class="mb-4 text-sm font-semibold uppercase tracking-wider text-white">Kontak</h4>
-            <address class="space-y-2 text-sm not-italic text-white/60">
-              <p>R5X2+X9Q, Jl. Bojong, Babakan, Tuwel, Kec. Bojong</p>
-              <p>Kabupaten Tegal, Jawa Tengah 52465</p>
-              <a href="tel:+6281234567890" class="block transition-colors hover:text-white">0812-3456-7890</a>
-              <a href="mailto:info@cbbceriya.com" class="block transition-colors hover:text-white">info@cbbceriya.com</a>
-            </address>
-          </div>
-        </div>
-        <div class="mt-10 border-t border-white/10 pt-6 text-center text-sm text-white/40">
-          &copy; 2026 CBB CERIYA. All rights reserved.
-        </div>
+    <footer class="site-footer">
+      <div class="container-section footer-grid">
+        <div class="footer-brand"><img src="images/logo-white.webp" alt="Logo CBB CERIYA" /><p>Ruang belajar Islami yang membantu anak mencintai proses belajar, membangun akhlak, dan mengembangkan potensinya.</p></div>
+        <nav aria-label="Navigasi footer"><h3>Jelajahi</h3><div class="footer-links"><a href="#about">Tentang</a><a href="#program">Program</a><a href="#gallery">Aktivitas</a><a href="#fasilitas">Fasilitas</a><a href="#faq">Pertanyaan umum</a><a href="#contact">Kontak</a></div></nav>
+        <div><h3>Ikuti kami</h3><div class="social-links"><a href="https://facebook.com/cbbceriya" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.instagram.com/cbbceriya/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://youtube.com/@cbbceriya" target="_blank" rel="noopener noreferrer">YouTube</a></div></div>
       </div>
+      <div class="container-section footer-bottom"><span>© 2026 CBB CERIYA</span><span>Cinta Baca Belajar — Cerdas Iman &amp; Kaya</span></div>
     </footer>
 
-    <button id="back-to-top" aria-label="Kembali ke atas" class="fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow-lg opacity-0 transition-all duration-300 hover:scale-110">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-      </svg>
-    </button>
+    <a id="mobile-cta" href="#contact" class="mobile-cta lg:hidden">Konsultasi Pendaftaran <span>→</span></a>
+    <button id="back-to-top" type="button" aria-label="Kembali ke atas" class="back-to-top">↑</button>
   </body>
 </html>
